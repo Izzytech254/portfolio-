@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// Admin Authentication
+// ============================================================
+model AdminUser {
+  id           String @id @default(cuid())
+  username     String @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+// ============================================================
+// Personal Info (single row)
+// ============================================================
+model PersonalInfo {
+  id          String       @id @default(cuid())
+  name        String
+  title       String
+  tagline     String
+  email       String
+  phone       String?
+  location    String
+  bio         String       @db.Text
+  avatar      String
+  resumeUrl   String
+  socialLinks SocialLink[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model SocialLink {
+  id             String        @id @default(cuid())
+  platform       String
+  url            String
+  icon           String
+  personalInfoId String
+  personalInfo   PersonalInfo  @relation(fields: [personalInfoId], references: [id], onDelete: Cascade)
+  order          Int           @default(0)
+}
+
+// ============================================================
+// Skills
+// ============================================================
+model Skill {
+  id       String @id @default(cuid())
+  name     String
+  level    Int    // 0-100
+  category String // Frontend, Backend, Database, DevOps, Tools, Languages
+  icon     String?
+  order    Int    @default(0)
+}
+
+// ============================================================
+// Projects
+// ============================================================
+model Project {
+  id              String   @id @default(cuid())
+  title           String
+  slug            String   @unique
+  description     String   @db.Text
+  longDescription String   @db.Text
+  image           String
+  gallery         String[] // Postgres array
+  techStack       String[]
+  category        String
+  githubUrl       String?
+  liveUrl         String?
+  featured        Boolean  @default(false)
+  highlights      String[]
+  role            String
+  duration        String
+  impact          String[]
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ============================================================
+// Experience
+// ============================================================
+model Experience {
+  id           String   @id @default(cuid())
+  company      String
+  role         String
+  duration     String
+  startDate    String
+  endDate      String
+  location     String
+  description  String   @db.Text
+  achievements String[]
+  techStack    String[]
+  type         String   // full-time, part-time, contract, freelance, internship
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ============================================================
+// Education
+// ============================================================
+model Education {
+  id           String   @id @default(cuid())
+  institution  String
+  degree       String
+  field        String
+  duration     String
+  startDate    String
+  endDate      String
+  gpa          String?
+  achievements String[]
+  coursework   String[]
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ============================================================
+// Certifications
+// ============================================================
+model Certification {
+  id            String   @id @default(cuid())
+  name          String
+  issuer        String
+  date          String
+  expiryDate    String?
+  credentialId  String?
+  credentialUrl String?
+  image         String?
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

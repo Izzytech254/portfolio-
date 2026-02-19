@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "education": "Education",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Available for new opportunities",
+    "greeting": "Hi, I'm",
+    "viewWork": "View My Work",
+    "downloadResume": "Download Resume"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate about code. Driven by impact.",
+    "location": "Location",
+    "experience": "Experience",
+    "specialty": "Specialty",
+    "availability": "Availability",
+    "openToWork": "Open to Work"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technologies I use to bring ideas to life"
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A showcase of my best work — engineered for performance, designed for impact.",
+    "caseStudy": "Case Study",
+    "viewDetails": "View Details",
+    "featured": "Featured"
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey — building, shipping, and scaling.",
+    "keyAchievements": "Key Achievements"
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "The foundation of my technical expertise",
+    "achievements": "Achievements",
+    "coursework": "Key Coursework"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Industry-recognized credentials validating my expertise",
+    "verify": "Verify Credential"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's build something amazing together.",
+    "connect": "Let's Connect",
+    "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    "name": "Full Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "sent": "Message Sent!",
+    "findMe": "Find me on"
+  },
+  "footer": {
+    "builtWith": "Built with",
+    "using": "using Next.js & Tailwind CSS",
+    "rights": "All rights reserved."
+  }
+}

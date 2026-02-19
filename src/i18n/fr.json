@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "status": "Disponible pour de nouvelles opportunités",
+    "greeting": "Bonjour, je suis",
+    "viewWork": "Voir Mon Travail",
+    "downloadResume": "Télécharger le CV"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "subtitle": "Passionné par le code. Motivé par l'impact.",
+    "location": "Localisation",
+    "experience": "Expérience",
+    "specialty": "Spécialité",
+    "availability": "Disponibilité",
+    "openToWork": "Ouvert aux Opportunités"
+  },
+  "skills": {
+    "title": "Compétences et Expertise",
+    "subtitle": "Technologies que j'utilise pour donner vie aux idées"
+  },
+  "projects": {
+    "title": "Projets en Vedette",
+    "subtitle": "Une vitrine de mon meilleur travail — conçu pour la performance et l'impact.",
+    "caseStudy": "Étude de Cas",
+    "viewDetails": "Voir les Détails",
+    "featured": "En Vedette"
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Mon parcours professionnel — construire, livrer et faire évoluer.",
+    "keyAchievements": "Réalisations Clés"
+  },
+  "education": {
+    "title": "Formation",
+    "subtitle": "Le fondement de mon expertise technique",
+    "achievements": "Réalisations",
+    "coursework": "Cours Principaux"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Accréditations reconnues par l'industrie validant mon expertise",
+    "verify": "Vérifier la Certification"
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "subtitle": "Vous avez un projet en tête ? Construisons quelque chose d'incroyable ensemble.",
+    "connect": "Connectons-nous",
+    "description": "Je suis toujours ouvert à discuter de nouveaux projets, d'idées créatives ou d'opportunités.",
+    "name": "Nom Complet",
+    "email": "E-mail",
+    "subject": "Sujet",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "sent": "Message Envoyé !",
+    "findMe": "Me trouver sur"
+  },
+  "footer": {
+    "builtWith": "Construit avec",
+    "using": "en utilisant Next.js & Tailwind CSS",
+    "rights": "Tous droits réservés."
+  }
+}
