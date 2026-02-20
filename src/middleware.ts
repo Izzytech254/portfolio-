@@ -1,12 +1,17 @@
-import { auth } from "@/lib/auth";
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default auth((req) => {
+export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  // Check for the NextAuth session token cookie
+  const token =
+    req.cookies.get("authjs.session-token")?.value ||
+    req.cookies.get("__Secure-authjs.session-token")?.value;
 
   // Protect all /admin routes except /admin/login
   if (pathname.startsWith("/admin") && pathname !== "/admin/login") {
-    if (!req.auth) {
+    if (!token) {
       const loginUrl = new URL("/admin/login", req.url);
       loginUrl.searchParams.set("callbackUrl", pathname);
       return NextResponse.redirect(loginUrl);
@@ -19,7 +24,7 @@ export default auth((req) => {
     !pathname.startsWith("/api/auth") &&
     !pathname.startsWith("/api/contact")
   ) {
-    if (req.method !== "GET" && !req.auth) {
+    if (req.method !== "GET" && !token) {
       return NextResponse.json(
         { success: false, error: "Unauthorized" },
         { status: 401 },
@@ -28,7 +33,7 @@ export default auth((req) => {
   }
 
   return NextResponse.next();
-});
+}
 
 export const config = {
   matcher: ["/admin/:path*", "/api/:path*"],
